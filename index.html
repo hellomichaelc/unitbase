@@ -10,47 +10,91 @@
    </head>
 
 <body>
-	<div class="form-group">
-		<select class="form-control" id="select">
-			<option>All</option>
-			<option>At Risk</option>
-			<option>On Notice</option>
-		</select>
-	</div>
+
+    <script type="text/javascript">
+        <!--
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+        //-->
+    </script>
+	
+                     <div class="panel panel-default panel-collapsible panel-collapsible-filter">
+                    <div class="panel-heading collapsed" data-toggle="collapse" data-target="#panel-collapse-filter">
+                      <h4 class="panel-title">
+                        <strong>Select Filters</strong>
+                      </h4>
+                      <span class="fa fa-check"></span>
+                      <span class="fa fa-chevron-up"></span>
+                    </div>
+                    <div id="panel-collapse-filter" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Less At Risk
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Less On Notice
+                        </label>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  
 
 	<ul class="tile-grid">  
 		<li class="row">
 			<div class="col-xs-12 tile-media-top tile">	
-				<div class="tile-media text-danger">
-					<span class="fa fa fa-chevron-circle-down fa-2x"></span>
+				<div class="tile-media text-sucess">
+					<span class="fa fa fa-chevron-circle-up fa-2x text-success"></span>
 				</div>
 				<div class="current-value">
 					<h2 class="tile-title text-larger">Current Base Value</h2>
-					<p class="tile-value text-danger text-larger">&pound5,154,101</p>
+					<p class="tile-value text-success text-larger line-tighter">&pound5,165,971<span class="tile-title text-normalminus text-muted">  + 0,89%</span></p>
 				</div>
 			</div>
 		</li>
 
-		<li class="row">
-			<div class="col-xs-12 tile-media-top start-value">                
-				<div class="tile-media text-danger">
-			</div>
-				<div class="start-value">
-					<h2 class="tile-title text-normalminus text-muted">Start of Year Value</h2>                    
-					<p class="tile-value text-muted text-normalminus">&pound5,069,246</p>
-				</div>
-			</div>
-		</li>
+        <li class="row">
+            <div class="col-xs-12 tile-media-top start-value">                
+                <div class="tile-media text-danger">
+            </div>
+                <div class="start-value">
+                    <h2 class="tile-title text-normalminus text-muted">Start of Year Value</h2>                    
+                    <p class="tile-value text-muted text-normalminus">&pound5,125,626</p>
+                </div>
+            </div>
+        </li>
 	</ul>
 
  	<div class="list-group">
-        <li class="list-group-item">
+        <a class="list-group-item" onclick="toggle_visibility('more-info-one');">
             <div class="values">
                 <span class="itemvalue text-danger">&pound5,318</span>
                 <span class="fa fa-level-down text-danger"></span>
             </div>
             <div class="text-danger">CATO</div>
-        </li>
+        </a>
+
+ <div class="ls-component" id="more-info-one">
+               <div class="list-group media-list-group">
+                 <div class="list-group-item unselectable">
+                   <div class="media-content">
+                     <h5 class="line-tighter text-normal">Current Value<span class="text-danger text-large text-weaker line-loose pull-right"> - 28.8%</span></h5>
+                     <h5 class="text-danger text-larger line-looser"><strong>&pound5,318</strong></h5>
+                     <h5 class="line-tighter text-muted text-normal">Start of Year Value</h5>
+                     <h5 class="text-muted text-larger line-loose"><strong>&pound7,469</strong></h5>
+                   </div>
+                    <h5 class="line-tight text-muted text-small">Product value has decreased <strong class="text-normal text-danger">&pound2,151</strong> since the start of the year.</h5>
+                 </div>
+               </div>
+</div>
 
         <li class="list-group-item">
             <div class="values">
@@ -66,13 +110,27 @@
             <div>CJM</div>
         </li>
 
-        <li class="list-group-item">
+        <a class="list-group-item" onclick="toggle_visibility('more-info-two');">
             <div class="values">
                 <span class="itemvalue text-success">&pound2,716,183</span>
                 <span class="fa fa-level-up text-success"></span>
             </div>
             <div class="text-success">CPA</div>
-        </li>
+        </a>
+
+         <div class="ls-component" id="more-info-two">
+                       <div class="list-group media-list-group">
+                         <div class="list-group-item unselectable">
+                           <div class="media-content">
+                             <h5 class="line-tighter text-normal">Current Value<span class="text-success text-large text-weaker line-loose pull-right"> + 5.8%</span></h5>
+                             <h5 class="text-success text-larger line-looser"><strong>&pound2,716,183</strong></h5>
+                             <h5 class="line-tighter text-muted text-normal">Start of Year Value</h5>
+                             <h5 class="text-muted text-larger line-loose"><strong>&pound2,567,596</strong></h5>
+                           </div>
+                            <h5 class="line-tight text-muted text-small">Product value has increased <strong class="text-normal text-success">&pound148,587</strong> since the start of the year.</h5>
+                         </div>
+                       </div>
+        </div>
 
         <li class="list-group-item">
             <div class="values">
@@ -95,13 +153,27 @@
             <div>Estimating</div>
         </li>
 
-        <li class="list-group-item">
+        <a class="list-group-item" onclick="toggle_visibility('more-info-three');">
             <div class="values">
                 <span class="itemvalue text-danger">&pound147,239</span>
                 <span class="fa fa-level-down text-danger"></span>
             </div>
             <div class="text-danger">Job Master</div>
-        </li>
+        </a>
+
+         <div class="ls-component" id="more-info-three">
+                       <div class="list-group media-list-group">
+                         <div class="list-group-item unselectable">
+                           <div class="media-content">
+                             <h5 class="line-tighter text-normal">Current Value<span class="text-danger text-large text-weaker line-loose pull-right"> - 40,6%</span></h5>
+                             <h5 class="text-danger text-larger line-looser"><strong>&pound647,239</strong></h5>
+                             <h5 class="line-tighter text-muted text-normal">Start of Year Value</h5>
+                             <h5 class="text-muted text-larger line-loose"><strong>&pound910,546</strong></h5>
+                           </div>
+                            <h5 class="line-tight text-muted text-small">Product value has decreased <strong class="text-normal text-danger">&pound263,307</strong> since the start of the year.</h5>
+                         </div>
+                       </div>
+        </div>
 
         <li class="list-group-item">
             <div class="values">
@@ -110,13 +182,27 @@
             <div>PDS</div>
         </li>
 
-        <li class="list-group-item">
+        <a class="list-group-item" onclick="toggle_visibility('more-info-four');">
             <div class="values">
                 <span class="itemvalue text-success">&pound518,201</span>
                 <span class="fa fa-level-up text-success"></span>
             </div>
             <div class="text-success">Telematics</div>
-        </li>
+        </a>
+
+         <div class="ls-component" id="more-info-four">
+                       <div class="list-group media-list-group">
+                         <div class="list-group-item unselectable">
+                           <div class="media-content">
+                             <h5 class="line-tighter text-normal">Current Value<span class="text-success text-large text-weaker line-loose pull-right"> + 43.5%</span></h5>
+                             <h5 class="text-success text-larger line-looser"><strong>&pound518,201</strong></h5>
+                             <h5 class="line-tighter text-muted text-normal">Start of Year Value</h5>
+                             <h5 class="text-muted text-larger line-loose"><strong>&pound360,985</strong></h5>
+                           </div>
+                            <h5 class="line-tight text-muted text-small">Product value has increased <strong class="text-normal text-success">&pound157,216</strong> since the start of the year.</h5>
+                         </div>
+                       </div>
+        </div>
 
     </div>
 </body>
